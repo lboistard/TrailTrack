@@ -1,0 +1,170 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "react-app",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:@tanstack/eslint-plugin-query/recommended"
+    ],
+    "env": {
+        "node": true,
+        "es6": true,
+        "mocha": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2020
+    },
+    "globals": {
+        "React": true
+    },
+    "overrides": [
+        {
+            "files": [
+                "*.ts",
+                "*.tsx"
+            ],
+            "parser": "@typescript-eslint/parser",
+            "plugins": [
+                "@typescript-eslint"
+            ],
+            "extends": [
+                "plugin:@typescript-eslint/recommended",
+                "plugin:@typescript-eslint/eslint-recommended"
+            ],
+            "rules": {
+                "@typescript-eslint/no-use-before-define": [
+                    "warn",
+                    {
+                        "allowNamedExports": true,
+                        "functions": false
+                    }
+                ],
+                "@typescript-eslint/ban-ts-comment": "off",
+                "@typescript-eslint/type-annotation-spacing": [
+                    "error",
+                    {
+                        "before": false,
+                        "after": true,
+                        "overrides": {
+                            "arrow": {
+                                "before": true
+                            }
+                        }
+                    }
+                ],
+                "@typescript-eslint/no-explicit-any": "off",
+                "@typescript-eslint/no-unused-vars": "error"
+            }
+        }
+    ],
+    "rules": {
+        "prefer-const": 1,
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "vars-on-top": "off",
+        "no-else-return": "off",
+        "no-underscore-dangle": "off",
+        "no-console": "off",
+        "max-len": [
+            "error",
+            120
+        ],
+        "no-plusplus": "off",
+        "no-await-in-loop": "off",
+        "react/no-unknown-property": "warn",
+        "prefer-arrow-callback": "error",
+        "func-names": "error",
+        "no-use-before-define": [
+            "warn",
+            {
+                "allowNamedExports": true,
+                "functions": false
+            }
+        ],
+        "function-paren-newline": "off",
+        "import/order": "error",
+        "no-var": "error",
+        "no-undef": "error",
+        "no-unused-vars": "error",
+        "arrow-spacing": "error",
+        "block-spacing": "error",
+        "dot-location": "error",
+        "brace-style": [
+            "error",
+            "1tbs",
+            {
+                "allowSingleLine": true
+            }
+        ],
+        "object-curly-newline": [
+            "error",
+            {
+                "consistent": true
+            }
+        ],
+        "object-curly-spacing": [
+            "error",
+            "always"
+        ],
+        "keyword-spacing": "error",
+        "space-before-blocks": "error",
+        "space-infix-ops": "error",
+        "space-before-function-paren": [
+            "error",
+            {
+                "anonymous": "never",
+                "named": "never",
+                "asyncArrow": "always"
+            }
+        ],
+        "no-trailing-spaces": "error",
+        "space-in-parens": "error",
+        "semi-spacing": "error",
+        "no-multi-spaces": "error",
+        "eqeqeq": "error",
+        "comma-dangle": [
+            "error",
+            {
+                "arrays": "always-multiline",
+                "objects": "always-multiline",
+                "imports": "always-multiline",
+                "exports": "always-multiline",
+                "functions": "never"
+            }
+        ],
+        "comma-spacing": "error",
+        "indent": [
+            "error",
+            2,
+            {
+                "SwitchCase": 1,
+                "offsetTernaryExpressions": true
+            }
+        ],
+        "react/prop-types": "off",
+        "react/self-closing-comp": "error",
+        "react/jsx-curly-brace-presence": "error",
+        "no-useless-rename": "error",
+        "no-fallthrough": "error",
+        "no-restricted-exports": [
+            "warn",
+            {
+                "restrictDefaultExports": {
+                    "direct": false,
+                    "named": true,
+                    "defaultFrom": true,
+                    "namedFrom": true,
+                    "namespaceFrom": true
+                }
+            }
+        ]
+    },
+    "ignorePatterns": [
+        "public/**/*.js",
+    ],
+    "plugins": [
+        "@tanstack/query"
+    ]
+}

@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import { useMediaQuery } from "@chakra-ui/react";
+import React, { createContext, useContext, useState, ReactNode, useEffect } from "react";
 
 type SidebarContextType = {
   isCollapsed: boolean;
@@ -9,7 +10,12 @@ const SidebarContext = createContext<SidebarContextType | undefined>(undefined);
 
 export const SidebarProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isMobile] = useMediaQuery("(max-width: 1100px)");
 
+  useEffect(() => {
+    setIsCollapsed(isMobile ? true : false);
+  }, [isMobile]);
+  
   const toggleCollapse = () => setIsCollapsed((prev) => !prev);
 
   return (

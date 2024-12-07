@@ -1,53 +1,63 @@
-import { Box, Grid, GridItem, Flex, Image, IconButton } from "@chakra-ui/react";
-import Logo from "../../assets/logo.png";
+import { Image } from "@chakra-ui/react";
+import Logo from "../../assets/logo.svg";
+import ChevronLeft from "../../assets/icons/ChevronLeft.svg";
 import Menu from "./menu/Menu";
-import {  IoChevronBackOutline, IoChevronForwardOutline} from "react-icons/io5";
 import { useSidebar } from "../../context/SidebarContext";
+import { 
+  SidebarBox, 
+  CloseIcon, 
+  LogoText, 
+  ImageContainer, 
+  LogoImageContainer, 
+  CloseIconContainer, 
+  CloseIconGridItem, 
+  HeaderContainer
+} from "./Sidebar.css";
 
 const Sidebar: React.FC = () => {
   const { isCollapsed, toggleCollapse } = useSidebar();
 
   return (
-    <Box
-      w={isCollapsed ? "72px" : "25%"}
-      bg="secondary.50"
-      minH="100vh"
-      transition="width 0.3s linear"
-     
-      p={4}
-    >
+    <SidebarBox isCollapsed={isCollapsed}>
       {/* Header */}
-      <Grid  marginBottom={8} templateColumns="repeat(2, 1fr)" >
+      <HeaderContainer>
         {!isCollapsed && (
-          <Flex justifyContent={"start"} alignItems={"center"}>
-            <Box>
-              <Image src={Logo} alt="Logo" height={"34px"} />
-            </Box>
-            <Box fontWeight={600} fontSize={"xl"} color="secondary.600" pl={4}>
-              FitTrack
-              </Box>
-          </Flex>
+          <LogoImageContainer>
+            <ImageContainer>
+              <Image src={Logo} alt="Logo"/>
+            </ImageContainer>
+            {
+              !isCollapsed && (
+                <LogoText 
+                  textStyle="h4" 
+                >
+                  FitTrack
+                </LogoText>
+              )
+            }
+          </LogoImageContainer>
         )}
-        <Grid justifyContent="end">
-          <GridItem colSpan={1}>
-            <IconButton 
+        <CloseIconContainer>
+          <CloseIconGridItem>
+            <CloseIcon 
               aria-label="Logo" 
-              bg="primary.50" 
-              border={"1px solid"} 
-              borderColor="secondary.200" 
-              borderRadius={"full"} 
-              p={2} 
-              _hover={{ bg: "secondary.50" }}
               onClick={toggleCollapse}
             >
-              {isCollapsed ? <IoChevronForwardOutline/> : <IoChevronBackOutline/>}
-            </IconButton>
-          </GridItem>
-        </Grid>
-      </Grid>
+              <Image 
+                src={ChevronLeft} 
+                alt="ChevronLeft"
+                style={{
+                  transition: 'transform 0.7s',
+                  transform: isCollapsed ? 'rotate(180deg)' : 'rotate(0deg)'
+                }}
+              />
+            </CloseIcon>
+          </CloseIconGridItem>
+        </CloseIconContainer>
+      </HeaderContainer>
       {/* Menu */}
       <Menu />
-    </Box>
+    </SidebarBox>
   );
 }
 
