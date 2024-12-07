@@ -1,9 +1,10 @@
 import React from "react";
-import {Box, Divider, Grid, Text } from "@chakra-ui/react";
+import { Divider, Grid } from "@chakra-ui/react";
 import { useSidebar } from "../../../context/SidebarContext";
 
 import MenuItem from "./MenuItem";
 import { items } from "./items";
+import { MenuItemsContainer, MenuText } from "./Menu.css";
 
 const Menu: React.FC = () => {
   
@@ -11,13 +12,17 @@ const Menu: React.FC = () => {
   
   return (
     <Grid>
-      {isCollapsed ? <Divider mb={4}/>: <Text color={"secondary.500"} fontWeight={600} fontSize={"md"} mb={4}>Main menu</Text> }
-    <Box w="100%">
-      {items.map((item, index) => (
-        <MenuItem key={index} item={item} />
-      ))}
-    </Box>
-      </Grid>
+      {isCollapsed ? (
+        <Divider mb={4}/>
+      ) : (
+        <MenuText variant={"body3"}>Main Menu</MenuText>
+      )}
+      <MenuItemsContainer>
+        {items.map((item, index) => (
+          <MenuItem key={index} item={item} />
+        ))}
+      </MenuItemsContainer>
+    </Grid> 
   );
 }
 

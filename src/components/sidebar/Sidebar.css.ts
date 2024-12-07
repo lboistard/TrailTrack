@@ -10,9 +10,9 @@ export const SidebarBox = styled(Box)<{ isCollapsed: boolean }>`
   padding: ${({ theme }) => `${theme.space.lg} ${theme.space.md}`};
 `;
 
-export const HeaderContainer = styled(Grid)`
+export const HeaderContainer = styled(Flex)`
+  justify-content: space-between;
   margin-bottom: ${({ theme }) => theme.space.lg};
-  template-columns: repeat(2, 1fr);
 `;
 
 export const LogoText = styled(Box)`
