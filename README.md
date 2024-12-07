@@ -1,7 +1,3 @@
-# Tauri + React + Typescript
+# TrailTrack 
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+TrailTrack is a smart platform for runners and trail runners to track activities, monitor health, and improve performance. It offers GPS mapping, health insights, personalized analytics & trail tools,
