@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+import "@fontsource/plus-jakarta-sans"; // Defaults to weight 400
 
 const themeValues = {
   space: {
@@ -98,12 +99,12 @@ const themeValues = {
     body2: {
       fontSize: "16px",
       lineHeight: "24px",
-      fontWeight: "bold",
+      fontWeight: "500",
     },
     body3: {
       fontSize: "14px",
       lineHeight: "20px",
-      fontWeight: "bold",
+      fontWeight: "600",
     },
     caption: {
       fontSize: "12px",

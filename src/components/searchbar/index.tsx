@@ -9,7 +9,7 @@ const SearchBar: React.FC = () => {
       align="center"
       justify="space-between"
       bg="gray.100"
-      p={4}
+      height={"96px"}
       borderRadius="md"
       boxShadow="md"
     >

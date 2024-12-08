@@ -8,6 +8,7 @@ export const MenuText = styled(Text)`
 
 export const MenuItemsContainer = styled(Box)`
   width: 100%;
+  margin-bottom: ${({ theme }) => theme.space.lg};
 `;
 
 export const MenuItemFlex = styled(Flex)<{ isActive: boolean }>`
@@ -18,7 +19,8 @@ export const MenuItemFlex = styled(Flex)<{ isActive: boolean }>`
   margin: ${({ theme }) => theme.space.sm} 0;
   cursor: pointer;
   &:hover {
-    background-color: ${({ theme }) => theme.colors.primary[500]};
+    background-color: ${({ theme, isActive }) =>
+      !isActive && theme.colors.neutral[100]};
   }
 
   background-color: ${({ theme, isActive }) =>

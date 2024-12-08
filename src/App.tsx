@@ -14,7 +14,6 @@ import theme from "./theme";
 
 const BoxContainer = styled(Box)`
   flex: 1;
-  padding: ${theme.space.md};
 `;
 
 const MainContainer = styled.main`
