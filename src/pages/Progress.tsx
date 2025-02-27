@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Progress: React.FC = () => {
-    return (
-        <div>
+  return (
+    <div>
             progress
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Progress;

@@ -3,11 +3,11 @@
 import React from 'react';
 
 const Schedule: React.FC = () => {
-    return (
-        <div>
+  return (
+    <div>
             Schedule
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Schedule;

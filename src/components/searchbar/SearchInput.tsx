@@ -1,14 +1,18 @@
 import React from "react";
-import { Input } from "@chakra-ui/react";
+import { useTheme } from "@chakra-ui/react";
+import SearchIcon from "../../assets/icons/Search.svg";
+import { InputContainer, InputField, InputStartIcon } from "./SearchBar.css";
 
 const SearchInput: React.FC = () => {
+  const theme = useTheme();
+
   return (
-    <Input
-      placeholder="Search..."
-      size="md"
-      maxW="400px"
-      borderRadius="full"
-    />
+    <InputContainer>
+      <InputStartIcon>
+        <SearchIcon color={theme.colors.neutral[200]} />
+      </InputStartIcon>
+      <InputField placeholder="Search" textStyle="body2" />
+    </InputContainer>
   );
 };
 

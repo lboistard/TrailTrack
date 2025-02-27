@@ -6,11 +6,16 @@ const themeValues = {
     xs: "4px",
     sm: "8px",
     sm2: "12px",
+    sm3: "10px",
     md: "16px",
     lg: "24px",
+    lg2: "28px",
     xl: "32px",
     "2xl": "40px",
     "3xl": "48px",
+    "4xl": "64px",
+    "5xl": "80px",
+    "6xl": "96px",
   },
   colors: {
     neutral: {
@@ -57,6 +62,7 @@ const themeValues = {
     },
     stroke: {
       100: "#E4E4E4",
+      400: "#767A80",
     },
   },
   styles: {

@@ -17,7 +17,7 @@ const MenuItem: React.FC<Props> = ({ item }) => {
 
 	const { isCollapsed } = useSidebar();
 	const location = useLocation();
-	const isActive = location.pathname === item.path;
+	const isActive = location.pathname.includes(item.path);
 	
 	return (
 		<MenuItemFlex isActive={isActive} onClick={() => navigate(item.path)}>

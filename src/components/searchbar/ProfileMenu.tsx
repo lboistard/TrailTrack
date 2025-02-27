@@ -4,14 +4,14 @@ import {
   MenuList,
   MenuItem,
   Avatar,
-  IconButton,
 } from "@chakra-ui/react";
+import { MenuIconButton } from "./SearchBar.css";
 
 const ProfileMenu = () => {
   return (
     <Menu>
-      <MenuButton as={IconButton} variant="ghost">
-        <Avatar size="sm" />
+      <MenuButton as={MenuIconButton} variant="ghost">
+        <Avatar size="sm"/>
       </MenuButton>
       <MenuList>
         <MenuItem>Voir le Profil</MenuItem>
